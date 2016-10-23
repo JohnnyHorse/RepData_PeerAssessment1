@@ -100,8 +100,9 @@ The shape of the data with replacement's curve is better than the one delete mis
 
 ##1.Create a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
 ```{r, echo=TRUE}
-activity$week=ifelse(weekdays(activity$date) == "Saturday" | weekdays(activity$date) == "Sunday", "weekend", "weekday")
+activity$week=ifelse(weekdays(activity$date) == "星期六" | weekdays(activity$date) == "星期日", "weekend", "weekday")
 table(activity$week)
+unique(weekdays(activity$date))
 ```
 ##2.Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). The plot should look something like the following, which was created using simulated data:
 ```{r, echo=TRUE}
